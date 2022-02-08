@@ -1,128 +1,134 @@
-<div id='glass' style="background-color: rgb(237, 237, 236); height: 100em; z-index: 2; width: 100em; opacity: 0.75; position: absolute;"></div>
-<div id='loading' style='z-index: 3; top: 50%; left: 50%; position: absolute;'><img src='https://ssl.gstatic.com/ui/v1/activityindicator/loading_bg_f5.gif'></div>
+<div id='glass'
+  style="background-color: rgb(237, 237, 236); height: 100em; z-index: 2; width: 100em; opacity: 0.75; position: absolute;">
+</div>
+<div id='loading' style='z-index: 3; top: 50%; left: 50%; position: absolute;'><img
+    src='https://ssl.gstatic.com/ui/v1/activityindicator/loading_bg_f5.gif'></div>
 
 <link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons.css">
 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
-<link href='//fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>  
+<link href='//fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 
 <style>
-body {
-font-family: 'Roboto', sans-serif;
-margin: 4%;
-}
-.branding-below {
-  bottom: 56px;
-  top: 0;
-}
+  body {
+    font-family: 'Roboto', sans-serif;
+    margin: 4%;
+  }
 
-.branding-text {
-  left: 7px;
-  position: relative;
-  top: 3px;
-}
+  .branding-below {
+    bottom: 56px;
+    top: 0;
+  }
 
-.col-contain {
-  overflow: hidden;
-}
+  .branding-text {
+    left: 7px;
+    position: relative;
+    top: 3px;
+  }
 
-.col-one {
-  float: left;
-  width: 50%;
-}
+  .col-contain {
+    overflow: hidden;
+  }
 
-.logo {
-  vertical-align: middle;
-}
+  .col-one {
+    float: left;
+    width: 50%;
+  }
 
-.radio-spacer {
-  height: 20px;
-}
+  .logo {
+    vertical-align: middle;
+  }
 
-.width-100 {
-  width: 100%;
-}
+  .radio-spacer {
+    height: 20px;
+  }
 
-#dlink {
-background: -webkit-linear-gradient(top , #4d90fe , #357ae8);
-padding: 7px;
-color: white;
-border: 1px solid #3079ed;
-font-family: "arial" , sans-serif;
-font-size: 11px;
-font-weight: bold;
-margin: 0;
-outline: 0;
-text-align: center;
-white-space: nowrap;
-border-radius: 2px;
-}
+  .width-100 {
+    width: 100%;
+  }
 
-a:hover
-{
-    text-decoration:none;
-}
+  #dlink {
+    background: -webkit-linear-gradient(top, #4d90fe, #357ae8);
+    padding: 7px;
+    color: white;
+    border: 1px solid #3079ed;
+    font-family: "arial", sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    margin: 0;
+    outline: 0;
+    text-align: center;
+    white-space: nowrap;
+    border-radius: 2px;
+  }
 
-hr {
-width: 25em;
-margin-top: 30px;
-margin-bottom: 17px;
-border-color: rgb(141, 141, 155);
-}
+  a:hover {
+    text-decoration: none;
+  }
 
-.result {
- display: none;
-}
+  hr {
+    width: 25em;
+    margin-top: 30px;
+    margin-bottom: 17px;
+    border-color: rgb(141, 141, 155);
+  }
+
+  .result {
+    display: none;
+  }
 </style>
 <div id='fullBody' class="sidebar branding-below" style="display:none;">
-<div style="margin-top: 15px;" >
-<b>Upload CSV</b>
-<form>
-        <b>Upload as a new</b> <br>
-        <input type="radio" name="format" value="doc">Document  <br>
-        <input type="radio" name="format" value="sheet">Spreadsheet
-        <input type="file" name="thefile" style="margin-bottom:10px;">
-        <input type="button" value="Upload" id="button" class='blue uploadBtn'>
-</form>
+  <div style="margin-top: 15px;">
+    <b>Upload CSV</b>
+    <form>
+      <b>Upload as a new</b> <br>
+      <input type="radio" name="format" value="doc">Document <br>
+      <input type="radio" name="format" value="sheet">Spreadsheet
+      <input type="file" name="thefile" style="margin-bottom:10px;">
+      <input type="button" value="Upload" id="button" class='blue uploadBtn'>
+    </form>
 
-</div>
-<!-- UPLOAD UI ENDS -->
-<div class="sidebar bottom">
-  <span class="gray branding-text">How do I use this?</span>
+  </div>
+  <!-- UPLOAD UI ENDS -->
+  <div class="sidebar bottom">
+    <span class="gray branding-text">How do I use this?</span>
     <li>Select the format you want returned (Document/Spreadsheet)</li>
     <li>Browse any CSV from your computer</li>
     <li><b>Upload</b></li>
     <!-- <li><a href='https://script.google.com/d/1eSnm4k2AC1iZ0NuiO9W6vkdqtyJZZS0iCgL-jft553mMlNYVT_MHFo7m/edit?newcopy'  -->
     <!-- target='_blank'>Click here</a> to make a copy of this script</li> -->
-</div>
-<div id='result' class='result'><div>Bada-bing, bada-boom: Here is your document link</div><span><a id='link' href='' target='_blank'>Open Now</a></span></div>
-<div id='error'></div>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
-<script>
+  </div>
+  <div id='result' class='result'>
+    <div>Bada-bing, bada-boom: Here is your document link</div><span><a id='link' href='' target='_blank'>Open
+        Now</a></span>
+  </div>
+  <div id='error'></div>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+  <script>
 
-function uploadCompleted(url) {
- //If the file is uploaded Successfully. Import the data into 
- $('#loading').hide();
- $('#glass').hide();
- if (url == 'oops') {
-   $('#error').html('Oops! Something went wrong. Let\'s try that again');
-   $('#error').show();
- } else {
-    $('#link').attr('href', url);
-    $('#result').show();
- }
-}
+    function uploadCompleted(url) {
+      //If the file is uploaded Successfully. Import the data into 
+      $('#loading').hide();
+      $('#glass').hide();
+      if (url == 'oops') {
+        $('#error').html('Oops! Something went wrong. Let\'s try that again');
+        $('#error').show();
+      } else {
+        $('#link').attr('href', url);
+        $('#result').show();
+      }
+    }
 
-  $(function() {
-  $('#fullBody').show();
-  $('#loading').hide();
-  $('#glass').hide();
-    $('.uploadBtn').click(function() {
-      $('#loading').show();
-      $('#glass').show(); 
-      $('#result').hide();
-      $('#error').hide();
-      google.script.run.withSuccessHandler(uploadCompleted).serverUpload(this.parentNode);
+    $(function () {
+      $('#fullBody').show();
+      $('#loading').hide();
+      $('#glass').hide();
+      $('.uploadBtn').click(function () {
+        $('#loading').show();
+        $('#glass').show();
+        $('#result').hide();
+        $('#error').hide();
+        google.script.run.withSuccessHandler(uploadCompleted).serverUpload(this.parentNode);
+      });
     });
-  });
-</script>
+  </script>
